@@ -7,5 +7,5 @@ import java.util.logging.Logger
 @Plugin(id = "velocity-language-kotlin", authors = ["Velocity Contributors"])
 @Suppress("unused")
 class VelocityPlugin @Inject constructor(
-    val logger: Logger
+    val logger: Logger,
 )
