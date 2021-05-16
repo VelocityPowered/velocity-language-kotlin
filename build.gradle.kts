@@ -1,8 +1,6 @@
-var kotlinVersion = "1.5.0"
+val kotlinVersion = "1.5.0"
 
 plugins {
-    val kotlinVersion = "1.5.0"
-
     kotlin("jvm") version kotlinVersion
     kotlin("kapt") version kotlinVersion
     kotlin("plugin.serialization") version kotlinVersion
@@ -23,10 +21,10 @@ dependencies {
 
     implementation(kotlin("stdlib"))
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${kotlinVersion}")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinVersion")
 
-    compileOnly("com.velocitypowered:velocity-api:${velocityVersion}")
-    kapt("com.velocitypowered:velocity-annotation-processor:${velocityVersion}")
+    compileOnly("com.velocitypowered:velocity-api:$velocityVersion")
+    kapt("com.velocitypowered:velocity-annotation-processor:$velocityVersion")
 }
 
 tasks.build {
