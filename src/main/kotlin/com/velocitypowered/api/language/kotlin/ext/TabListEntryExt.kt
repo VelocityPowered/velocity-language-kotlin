@@ -4,6 +4,7 @@ import com.velocitypowered.api.proxy.player.TabList
 import com.velocitypowered.api.proxy.player.TabListEntry
 import com.velocitypowered.api.util.GameProfile
 import net.kyori.adventure.text.Component
+import java.lang.invoke.MethodHandles
 
 val TabListEntry.parent: TabList
     inline get() = parent()
@@ -29,32 +30,47 @@ var TabListEntry.gameMode: Int
         setGameMode(value)
     }
 
-var TabListEntry.Builder.tabList: TabList
-    get() = throw UnsupportedOperationException("There is no getter in the Velocity API")
-    inline set(value) {
+private val tabListVarHandle =
+    MethodHandles.lookup().findVarHandle(TabListEntry.Builder::class.java, "tabList", TabList::class.java)
+
+private val profileVarHandle =
+    MethodHandles.lookup().findVarHandle(TabListEntry.Builder::class.java, "profile", GameProfile::class.java)
+
+private val displayNameVarHandle =
+    MethodHandles.lookup().findVarHandle(TabListEntry.Builder::class.java, "displayName", Component::class.java)
+
+private val latencyVarHandle =
+    MethodHandles.lookup().findVarHandle(TabListEntry.Builder::class.java, "latency", Int::class.java)
+
+private val gameModeVarHandle =
+    MethodHandles.lookup().findVarHandle(TabListEntry.Builder::class.java, "gameMode", Int::class.java)
+
+var TabListEntry.Builder.tabList: TabList?
+    get() = tabListVarHandle[this] as? TabList
+    set(value) {
         tabList(value)
     }
 
-var TabListEntry.Builder.profile: GameProfile
-    get() = throw UnsupportedOperationException("There is no getter in the Velocity API")
-    inline set(value) {
+var TabListEntry.Builder.profile: GameProfile?
+    get() = profileVarHandle[this] as? GameProfile
+    set(value) {
         profile(value)
     }
 
 var TabListEntry.Builder.displayName: Component?
-    get() = throw UnsupportedOperationException("There is no getter in the Velocity API")
+    get() = displayNameVarHandle[this] as Component?
     inline set(value) {
         displayName(value)
     }
 
 var TabListEntry.Builder.latency: Int
-    get() = throw UnsupportedOperationException("There is no getter in the Velocity API")
+    get() = latencyVarHandle[this] as? Int ?: 0
     inline set(value) {
         latency(value)
     }
 
 var TabListEntry.Builder.gameMode: Int
-    get() = throw UnsupportedOperationException("There is no getter in the Velocity API")
+    get() = gameModeVarHandle[this] as? Int ?: 0
     inline set(value) {
         gameMode(value)
     }
