@@ -1,4 +1,4 @@
-package com.velocitypowered.api.language.kotlin
+package com.velocitypowered.api.kt
 
 import com.google.inject.Inject
 import com.velocitypowered.api.plugin.Plugin

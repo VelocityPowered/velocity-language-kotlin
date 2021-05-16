@@ -1,18 +1,18 @@
 rootProject.name = "velocity-language-kotlin"
 
 pluginManagement {
-    repositories {
-        mavenCentral()
-        gradlePluginPortal()
-    }
+  repositories {
+    mavenCentral()
+    gradlePluginPortal()
+  }
 
-    plugins {
-        val kotlinVersion: String by settings
+  plugins {
+    val kotlinVersion: String by settings
 
-        kotlin("jvm") version kotlinVersion
-        kotlin("kapt") version kotlinVersion
-        kotlin("plugin.serialization") version kotlinVersion
+    kotlin("jvm") version kotlinVersion
+    kotlin("kapt") version kotlinVersion
+    kotlin("plugin.serialization") version kotlinVersion
 
-        id("com.github.johnrengelman.shadow") version "6.1.0"
-    }
+    id("com.github.johnrengelman.shadow") version "6.1.0"
+  }
 }
