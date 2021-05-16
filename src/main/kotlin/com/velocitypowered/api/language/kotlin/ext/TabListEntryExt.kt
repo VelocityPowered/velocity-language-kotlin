@@ -31,31 +31,31 @@ var TabListEntry.gameMode: Int
 
 var TabListEntry.Builder.tabList: TabList
     get() = throw UnsupportedOperationException("There is no getter in the Velocity API")
-    set(value) {
+    inline set(value) {
         tabList(value)
     }
 
 var TabListEntry.Builder.profile: GameProfile
     get() = throw UnsupportedOperationException("There is no getter in the Velocity API")
-    set(value) {
+    inline set(value) {
         profile(value)
     }
 
 var TabListEntry.Builder.displayName: Component?
     get() = throw UnsupportedOperationException("There is no getter in the Velocity API")
-    set(value) {
+    inline set(value) {
         displayName(value)
     }
 
 var TabListEntry.Builder.latency: Int
     get() = throw UnsupportedOperationException("There is no getter in the Velocity API")
-    set(value) {
+    inline set(value) {
         latency(value)
     }
 
 var TabListEntry.Builder.gameMode: Int
     get() = throw UnsupportedOperationException("There is no getter in the Velocity API")
-    set(value) {
+    inline set(value) {
         gameMode(value)
     }
 
