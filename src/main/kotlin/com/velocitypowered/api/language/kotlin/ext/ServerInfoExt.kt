@@ -8,3 +8,7 @@ val ServerInfo.name: String
 
 val ServerInfo.address: SocketAddress
     inline get() = address()
+
+operator fun ServerInfo.component1() = name
+
+operator fun ServerInfo.component2() = address
