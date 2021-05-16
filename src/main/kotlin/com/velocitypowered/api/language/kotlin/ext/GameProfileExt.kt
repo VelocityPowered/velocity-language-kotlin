@@ -19,7 +19,7 @@ operator fun GameProfile.component1(): UUID = uniqueId
 
 operator fun GameProfile.component2(): String = name
 
-operator fun GameProfile.component3(): Collection<GameProfile.Property> = properties()
+operator fun GameProfile.component3(): Collection<GameProfile.Property> = properties
 
 val GameProfile.Property.name: String
     inline get() = name()
