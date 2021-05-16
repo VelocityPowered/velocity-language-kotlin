@@ -6,7 +6,7 @@ import java.util.*
 val GameProfile.uniqueId: UUID
     inline get() = uuid()
 
-val GameProfile.name
+val GameProfile.name: String
     inline get() = name()
 
 val GameProfile.properties: Collection<GameProfile.Property>
@@ -30,8 +30,8 @@ val GameProfile.Property.value: String
 val GameProfile.Property.signature: String
     inline get() = signature()
 
-operator fun GameProfile.Property.component1() = name
+operator fun GameProfile.Property.component1(): String = name
 
-operator fun GameProfile.Property.component2() = value
+operator fun GameProfile.Property.component2(): String = value
 
-operator fun GameProfile.Property.component3() = signature
+operator fun GameProfile.Property.component3(): String = signature
