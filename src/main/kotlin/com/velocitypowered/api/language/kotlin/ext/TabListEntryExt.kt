@@ -29,25 +29,5 @@ var TabListEntry.gameMode: Int
         setGameMode(value)
     }
 
-inline fun TabListEntry.Builder.tabList(builder: TabListEntry.Builder.() -> TabList) = apply {
-    tabList(builder())
-}
-
-inline fun TabListEntry.Builder.profile(builder: TabListEntry.Builder.() -> GameProfile) = apply {
-    profile(builder())
-}
-
-inline fun TabListEntry.Builder.displayName(builder: TabListEntry.Builder.() -> Component?) = apply {
-    displayName(builder())
-}
-
-inline fun TabListEntry.Builder.latency(builder: TabListEntry.Builder.() -> Int) = apply {
-    latency(builder())
-}
-
-inline fun TabListEntry.Builder.gameMode(builder: TabListEntry.Builder.() -> Int) = apply {
-    gameMode(builder())
-}
-
 inline fun TabListEntry(builder: TabListEntry.Builder.() -> Unit): TabListEntry =
     TabListEntry.builder().apply(builder).build()
