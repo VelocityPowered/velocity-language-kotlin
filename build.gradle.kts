@@ -1,16 +1,14 @@
-val kotlinVersion = "1.5.0"
-
 plugins {
-    val kotlinVersion = "1.5.0"
-
-    kotlin("jvm") version kotlinVersion
-    kotlin("kapt") version kotlinVersion
-    kotlin("plugin.serialization") version kotlinVersion
-    id("com.github.johnrengelman.shadow") version "6.1.0"
+    kotlin("jvm")
+    kotlin("kapt")
+    kotlin("plugin.serialization")
+    id("com.github.johnrengelman.shadow")
 }
 
+val kotlinVersion: String by project
+
 group = "com.velocitypowered"
-version = kotlinVersion + "-SNAPSHOT"
+version = "$kotlinVersion-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -21,7 +19,6 @@ repositories {
 dependencies {
     val velocityVersion: String by project
 
-    implementation(kotlin("stdlib"))
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinVersion")
 
