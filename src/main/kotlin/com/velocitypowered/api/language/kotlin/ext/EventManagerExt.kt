@@ -28,6 +28,7 @@ fun suspended(fn: suspend () -> Unit): EventTask {
         val completion = object : Continuation<Unit> {
             override val context: CoroutineContext
                 get() = EmptyCoroutineContext
+
             override fun resumeWith(result: Result<Unit>) {
                 if (result.isFailure) {
                     continuation.resumeWithException(result.exceptionOrNull())
