@@ -3,9 +3,12 @@ package com.velocitypowered.api.kt.proxy.connection
 import com.velocitypowered.api.proxy.connection.Player
 import com.velocitypowered.api.proxy.connection.ServerConnection
 import com.velocitypowered.api.proxy.player.ClientSettings
+import com.velocitypowered.api.proxy.player.ConnectionRequestBuilder
 import com.velocitypowered.api.proxy.player.TabList
+import com.velocitypowered.api.proxy.server.RegisteredServer
 import com.velocitypowered.api.util.GameProfile
 import com.velocitypowered.api.util.ModInfo
+import kotlinx.coroutines.future.await
 import java.util.UUID
 
 val Player.uniqueId: UUID
@@ -40,3 +43,6 @@ val Player.gameProfile: GameProfile
 
 val Player.tabList: TabList
   inline get() = tabList()
+
+suspend fun Player.connectTo(server: RegisteredServer): ConnectionRequestBuilder.Result =
+  createConnectionRequest(server).connect().await()
