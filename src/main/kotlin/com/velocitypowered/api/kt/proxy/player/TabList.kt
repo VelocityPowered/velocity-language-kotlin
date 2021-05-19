@@ -4,8 +4,8 @@ import com.velocitypowered.api.proxy.player.TabList
 import com.velocitypowered.api.proxy.player.TabListEntry
 import java.util.UUID
 
-val TabList.entries: Collection<TabListEntry>
-  inline get() = entries()
+inline val TabList.entries: Collection<TabListEntry>
+  get() = entries()
 
 operator fun TabList.plus(entry: TabListEntry): TabList = apply {
   addEntry(entry)

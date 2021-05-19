@@ -4,12 +4,12 @@ import com.velocitypowered.api.event.player.PlayerChooseInitialServerEvent
 import com.velocitypowered.api.proxy.connection.Player
 import com.velocitypowered.api.proxy.server.RegisteredServer
 
-val PlayerChooseInitialServerEvent.player: Player
-  inline get() = player()
+inline val PlayerChooseInitialServerEvent.player: Player
+  get() = player()
 
-var PlayerChooseInitialServerEvent.initialServer: RegisteredServer?
-  inline get() = initialServer()
-  inline set(value) {
+inline var PlayerChooseInitialServerEvent.initialServer: RegisteredServer?
+  get() = initialServer()
+  set(value) {
     setInitialServer(value)
   }
 

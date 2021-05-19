@@ -4,14 +4,14 @@ import com.velocitypowered.api.event.connection.ProxyQueryEvent
 import com.velocitypowered.api.proxy.server.QueryResponse
 import java.net.InetAddress
 
-val ProxyQueryEvent.type: ProxyQueryEvent.QueryType
-  inline get() = type()
+inline val ProxyQueryEvent.type: ProxyQueryEvent.QueryType
+  get() = type()
 
-val ProxyQueryEvent.queryingAddress: InetAddress
-  inline get() = queryingAddress()
+inline val ProxyQueryEvent.queryingAddress: InetAddress
+  get() = queryingAddress()
 
-var ProxyQueryEvent.response: QueryResponse
-  inline get() = response()
-  inline set(value) {
+inline var ProxyQueryEvent.response: QueryResponse
+  get() = response()
+  set(value) {
     setResponse(value)
   }

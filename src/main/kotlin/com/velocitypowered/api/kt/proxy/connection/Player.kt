@@ -11,38 +11,38 @@ import com.velocitypowered.api.util.ModInfo
 import kotlinx.coroutines.future.await
 import java.util.UUID
 
-val Player.uniqueId: UUID
-  inline get() = id()
+inline val Player.uniqueId: UUID
+  get() = id()
 
-val Player.username: String
-  inline get() = username()
+inline val Player.username: String
+  get() = username()
 
-val Player.connectedServer: ServerConnection?
-  inline get() = connectedServer()
+inline val Player.connectedServer: ServerConnection?
+  get() = connectedServer()
 
-val Player.clientSettings: ClientSettings
-  inline get() = clientSettings()
+inline val Player.clientSettings: ClientSettings
+  get() = clientSettings()
 
-val Player.modInfo: ModInfo?
-  inline get() = modInfo()
+inline val Player.modInfo: ModInfo?
+  get() = modInfo()
 
-val Player.ping: Long
-  inline get() = ping()
+inline val Player.ping: Long
+  get() = ping()
 
-val Player.onlineMode: Boolean
-  inline get() = onlineMode()
+inline val Player.onlineMode: Boolean
+  get() = onlineMode()
 
-var Player.gameProfileProperties: Collection<GameProfile.Property>
-  inline get() = gameProfile().properties()
-  inline set(value) {
+inline var Player.gameProfileProperties: Collection<GameProfile.Property>
+  get() = gameProfile().properties()
+  set(value) {
     setGameProfileProperties(value.toList())
   }
 
-val Player.gameProfile: GameProfile
-  inline get() = gameProfile()
+inline val Player.gameProfile: GameProfile
+  get() = gameProfile()
 
-val Player.tabList: TabList
-  inline get() = tabList()
+inline val Player.tabList: TabList
+  get() = tabList()
 
 suspend fun Player.connectTo(server: RegisteredServer): ConnectionRequestBuilder.Result =
   createConnectionRequest(server).connect().await()

@@ -5,14 +5,14 @@ import com.velocitypowered.api.proxy.messages.ChannelMessageSink
 import com.velocitypowered.api.proxy.messages.ChannelMessageSource
 import com.velocitypowered.api.proxy.messages.PluginChannelId
 
-val PluginMessageEvent.source: ChannelMessageSource
-  inline get() = source()
+inline val PluginMessageEvent.source: ChannelMessageSource
+  get() = source()
 
-val PluginMessageEvent.sink: ChannelMessageSink
-  inline get() = sink()
+inline val PluginMessageEvent.sink: ChannelMessageSink
+  get() = sink()
 
-val PluginMessageEvent.channel: PluginChannelId
-  inline get() = channel()
+inline val PluginMessageEvent.channel: PluginChannelId
+  get() = channel()
 
-val PluginMessageEvent.rawMessage: ByteArray
-  inline get() = rawMessage()
+inline val PluginMessageEvent.rawMessage: ByteArray
+  get() = rawMessage()

@@ -4,11 +4,11 @@ import com.velocitypowered.api.event.connection.ProxyPingEvent
 import com.velocitypowered.api.proxy.connection.InboundConnection
 import com.velocitypowered.api.proxy.server.ServerPing
 
-val ProxyPingEvent.connection: InboundConnection
-  inline get() = connection()
+inline val ProxyPingEvent.connection: InboundConnection
+  get() = connection()
 
-var ProxyPingEvent.ping: ServerPing
-  inline get() = ping()
-  inline set(value) {
+inline var ProxyPingEvent.ping: ServerPing
+  get() = ping()
+  set(value) {
     setPing(value)
   }

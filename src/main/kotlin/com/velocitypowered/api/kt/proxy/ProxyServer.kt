@@ -10,26 +10,26 @@ import com.velocitypowered.api.proxy.messages.ChannelRegistrar
 import com.velocitypowered.api.scheduler.Scheduler
 import com.velocitypowered.api.util.ProxyVersion
 
-val ProxyServer.consoleCommandSource: ConsoleCommandSource
-  inline get() = consoleCommandSource()
+inline val ProxyServer.consoleCommandSource: ConsoleCommandSource
+  get() = consoleCommandSource()
 
-val ProxyServer.pluginManager: PluginManager
-  inline get() = pluginManager()
+inline val ProxyServer.pluginManager: PluginManager
+  get() = pluginManager()
 
-val ProxyServer.eventManager: EventManager
-  inline get() = eventManager()
+inline val ProxyServer.eventManager: EventManager
+  get() = eventManager()
 
-val ProxyServer.commandManager: CommandManager
-  inline get() = commandManager()
+inline val ProxyServer.commandManager: CommandManager
+  get() = commandManager()
 
-val ProxyServer.scheduler: Scheduler
-  inline get() = scheduler()
+inline val ProxyServer.scheduler: Scheduler
+  get() = scheduler()
 
-val ProxyServer.channelRegistrar: ChannelRegistrar
-  inline get() = channelRegistrar()
+inline val ProxyServer.channelRegistrar: ChannelRegistrar
+  get() = channelRegistrar()
 
-val ProxyServer.configuration: ProxyConfig
-  inline get() = configuration()
+inline val ProxyServer.configuration: ProxyConfig
+  get() = configuration()
 
-val ProxyServer.version: ProxyVersion
-  inline get() = version()
+inline val ProxyServer.version: ProxyVersion
+  get() = version()

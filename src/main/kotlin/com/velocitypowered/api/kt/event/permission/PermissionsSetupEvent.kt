@@ -4,12 +4,12 @@ import com.velocitypowered.api.event.permission.PermissionsSetupEvent
 import com.velocitypowered.api.permission.PermissionProvider
 import com.velocitypowered.api.permission.PermissionSubject
 
-val PermissionsSetupEvent.subject: PermissionSubject
-  inline get() = subject()
+inline val PermissionsSetupEvent.subject: PermissionSubject
+  get() = subject()
 
-var PermissionsSetupEvent.provider: PermissionProvider
-  inline get() = provider()
-  inline set(value) {
+inline var PermissionsSetupEvent.provider: PermissionProvider
+  get() = provider()
+  set(value) {
     setProvider(value)
   }
 

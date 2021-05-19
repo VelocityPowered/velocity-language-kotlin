@@ -4,11 +4,11 @@ import com.velocitypowered.api.event.player.ServerPreConnectEvent
 import com.velocitypowered.api.proxy.connection.Player
 import com.velocitypowered.api.proxy.server.RegisteredServer
 
-val ServerPreConnectEvent.player: Player
-  inline get() = player()
+inline val ServerPreConnectEvent.player: Player
+  get() = player()
 
-val ServerPreConnectEvent.originalTarget: RegisteredServer
-  inline get() = originalTarget()
+inline val ServerPreConnectEvent.originalTarget: RegisteredServer
+  get() = originalTarget()
 
-val ServerPreConnectEvent.ServerResult.target: RegisteredServer?
-  inline get() = target()
+inline val ServerPreConnectEvent.ServerResult.target: RegisteredServer?
+  get() = target()

@@ -2,14 +2,14 @@ package com.velocitypowered.api.kt.network
 
 import com.velocitypowered.api.network.ProtocolVersion
 
-val ProtocolVersion.protocol: Int
-  inline get() = protocol()
+inline val ProtocolVersion.protocol: Int
+  get() = protocol()
 
-val ProtocolVersion.supportedVersions: Collection<String>
-  inline get() = supportedVersions()
+inline val ProtocolVersion.supportedVersions: Collection<String>
+  get() = supportedVersions()
 
-val ProtocolVersion.versionIntroducedIn: String
-  inline get() = versionIntroducedIn()
+inline val ProtocolVersion.versionIntroducedIn: String
+  get() = versionIntroducedIn()
 
-val ProtocolVersion.mostRecentSupportedVersion: String
-  inline get() = mostRecentSupportedVersion()
+inline val ProtocolVersion.mostRecentSupportedVersion: String
+  get() = mostRecentSupportedVersion()

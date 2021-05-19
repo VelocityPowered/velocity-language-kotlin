@@ -2,14 +2,14 @@ package com.velocitypowered.api.kt.plugin.meta
 
 import com.velocitypowered.api.plugin.meta.PluginDependency
 
-val PluginDependency.id: String
-  inline get() = id()
+inline val PluginDependency.id: String
+  get() = id()
 
-val PluginDependency.version: String?
-  inline get() = version()
+inline val PluginDependency.version: String?
+  get() = version()
 
-val PluginDependency.isOptional: Boolean
-  inline get() = optional()
+inline val PluginDependency.isOptional: Boolean
+  get() = optional()
 
 operator fun PluginDependency.component1(): String = id
 operator fun PluginDependency.component2(): String? = version

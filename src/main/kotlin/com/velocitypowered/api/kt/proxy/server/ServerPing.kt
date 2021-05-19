@@ -6,51 +6,51 @@ import com.velocitypowered.api.util.ModInfo
 import net.kyori.adventure.text.Component
 import java.util.UUID
 
-val ServerPing.version: ServerPing.Version
-  inline get() = version()
+inline val ServerPing.version: ServerPing.Version
+  get() = version()
 
-val ServerPing.players: ServerPing.Players?
-  inline get() = players()
+inline val ServerPing.players: ServerPing.Players?
+  get() = players()
 
-val ServerPing.description: Component
-  inline get() = description()
+inline val ServerPing.description: Component
+  get() = description()
 
-val ServerPing.favicon: Favicon?
-  inline get() = favicon()
+inline val ServerPing.favicon: Favicon?
+  get() = favicon()
 
-val ServerPing.modInfo: ModInfo?
-  inline get() = modInfo()
+inline val ServerPing.modInfo: ModInfo?
+  get() = modInfo()
 
 fun ServerPing(builder: ServerPing.Builder.() -> Unit): ServerPing =
   ServerPing.builder().apply(builder).build()
 
-val ServerPing.Version.protocol: Int
-  inline get() = protocol()
+inline val ServerPing.Version.protocol: Int
+  get() = protocol()
 
-val ServerPing.Version.name: String
-  inline get() = name()
+inline val ServerPing.Version.name: String
+  get() = name()
 
 operator fun ServerPing.Version.component1(): Int = protocol
 operator fun ServerPing.Version.component2(): String = name
 
-val ServerPing.Players.online: Int
-  inline get() = online()
+inline val ServerPing.Players.online: Int
+  get() = online()
 
-val ServerPing.Players.max: Int
-  inline get() = maximum()
+inline val ServerPing.Players.max: Int
+  get() = maximum()
 
-val ServerPing.Players.sample: Collection<ServerPing.SamplePlayer>
-  inline get() = sample()
+inline val ServerPing.Players.sample: Collection<ServerPing.SamplePlayer>
+  get() = sample()
 
 operator fun ServerPing.Players.component1(): Int = online
 operator fun ServerPing.Players.component2(): Int = max
 operator fun ServerPing.Players.component3(): Collection<ServerPing.SamplePlayer> = sample
 
-val ServerPing.SamplePlayer.uniqueId: UUID
-  inline get() = id()
+inline val ServerPing.SamplePlayer.uniqueId: UUID
+  get() = id()
 
-val ServerPing.SamplePlayer.name: String
-  inline get() = name()
+inline val ServerPing.SamplePlayer.name: String
+  get() = name()
 
 operator fun ServerPing.SamplePlayer.component1(): UUID = uniqueId
 operator fun ServerPing.SamplePlayer.component2(): String = name

@@ -4,26 +4,26 @@ import com.velocitypowered.api.plugin.PluginDescription
 import com.velocitypowered.api.plugin.meta.PluginDependency
 import java.nio.file.Path
 
-val PluginDescription.id: String
-  inline get() = id()
+inline val PluginDescription.id: String
+  get() = id()
 
-val PluginDescription.name: String
-  inline get() = name()
+inline val PluginDescription.name: String
+  get() = name()
 
-val PluginDescription.version: String?
-  inline get() = version()
+inline val PluginDescription.version: String?
+  get() = version()
 
-val PluginDescription.description: String?
-  inline get() = description()
+inline val PluginDescription.description: String?
+  get() = description()
 
-val PluginDescription.url: String?
-  inline get() = url()
+inline val PluginDescription.url: String?
+  get() = url()
 
-val PluginDescription.authors: Collection<String>
-  inline get() = authors()
+inline val PluginDescription.authors: Collection<String>
+  get() = authors()
 
-val PluginDescription.dependencies: Collection<PluginDependency>
-  inline get() = dependencies()
+inline val PluginDescription.dependencies: Collection<PluginDependency>
+  get() = dependencies()
 
-val PluginDescription.file: Path?
-  inline get() = file()
+inline val PluginDescription.file: Path?
+  get() = file()

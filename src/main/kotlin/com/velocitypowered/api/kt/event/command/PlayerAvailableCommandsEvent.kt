@@ -4,8 +4,8 @@ import com.mojang.brigadier.tree.RootCommandNode
 import com.velocitypowered.api.event.command.PlayerAvailableCommandsEvent
 import com.velocitypowered.api.proxy.connection.Player
 
-val PlayerAvailableCommandsEvent.player: Player
-  inline get() = player()
+inline val PlayerAvailableCommandsEvent.player: Player
+  get() = player()
 
-val PlayerAvailableCommandsEvent.rootNode: RootCommandNode<*>
-  inline get() = rootNode()
+inline val PlayerAvailableCommandsEvent.rootNode: RootCommandNode<*>
+  get() = rootNode()

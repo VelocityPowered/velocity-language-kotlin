@@ -2,35 +2,35 @@ package com.velocitypowered.api.kt.proxy.server
 
 import com.velocitypowered.api.proxy.server.QueryResponse
 
-val QueryResponse.hostname: String
-  inline get() = hostname()
+inline val QueryResponse.hostname: String
+  get() = hostname()
 
-val QueryResponse.gameVersion: String
-  inline get() = gameVersion()
+inline val QueryResponse.gameVersion: String
+  get() = gameVersion()
 
-val QueryResponse.mapName: String
-  inline get() = mapName()
+inline val QueryResponse.mapName: String
+  get() = mapName()
 
-val QueryResponse.onlinePlayers: Int
-  inline get() = onlinePlayers()
+inline val QueryResponse.onlinePlayers: Int
+  get() = onlinePlayers()
 
-val QueryResponse.maxPlayers: Int
-  inline get() = maxPlayers()
+inline val QueryResponse.maxPlayers: Int
+  get() = maxPlayers()
 
-val QueryResponse.proxyHost: String
-  inline get() = proxyHost()
+inline val QueryResponse.proxyHost: String
+  get() = proxyHost()
 
-val QueryResponse.proxyPort: Int
-  inline get() = proxyPort()
+inline val QueryResponse.proxyPort: Int
+  get() = proxyPort()
 
-val QueryResponse.players: Collection<String>
-  inline get() = players()
+inline val QueryResponse.players: Collection<String>
+  get() = players()
 
-val QueryResponse.proxyVersion: String
-  inline get() = proxyVersion()
+inline val QueryResponse.proxyVersion: String
+  get() = proxyVersion()
 
-val QueryResponse.plugins: Collection<QueryResponse.PluginInformation>
-  inline get() = plugins()
+inline val QueryResponse.plugins: Collection<QueryResponse.PluginInformation>
+  get() = plugins()
 
 inline fun QueryResponse(builder: QueryResponse.Builder.() -> Unit): QueryResponse =
   QueryResponse.builder().apply(builder).build()

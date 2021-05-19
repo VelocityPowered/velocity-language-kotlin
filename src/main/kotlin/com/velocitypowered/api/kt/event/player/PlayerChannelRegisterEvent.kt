@@ -4,8 +4,8 @@ import com.velocitypowered.api.event.player.PlayerChannelRegisterEvent
 import com.velocitypowered.api.proxy.connection.Player
 import com.velocitypowered.api.proxy.messages.PluginChannelId
 
-val PlayerChannelRegisterEvent.player: Player
-  inline get() = player()
+inline val PlayerChannelRegisterEvent.player: Player
+  get() = player()
 
-val PlayerChannelRegisterEvent.channels: Collection<PluginChannelId>
-  inline get() = channels()
+inline val PlayerChannelRegisterEvent.channels: Collection<PluginChannelId>
+  get() = channels()

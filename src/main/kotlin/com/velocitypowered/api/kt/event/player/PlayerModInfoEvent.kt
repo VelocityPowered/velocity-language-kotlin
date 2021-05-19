@@ -4,8 +4,8 @@ import com.velocitypowered.api.event.player.PlayerModInfoEvent
 import com.velocitypowered.api.proxy.connection.Player
 import com.velocitypowered.api.util.ModInfo
 
-val PlayerModInfoEvent.player: Player
-  inline get() = player()
+inline val PlayerModInfoEvent.player: Player
+  get() = player()
 
-val PlayerModInfoEvent.modInfo: ModInfo
-  inline get() = modInfo()
+inline val PlayerModInfoEvent.modInfo: ModInfo
+  get() = modInfo()

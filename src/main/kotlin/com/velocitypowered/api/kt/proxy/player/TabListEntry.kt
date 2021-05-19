@@ -5,27 +5,27 @@ import com.velocitypowered.api.proxy.player.TabListEntry
 import com.velocitypowered.api.util.GameProfile
 import net.kyori.adventure.text.Component
 
-val TabListEntry.parent: TabList
-  inline get() = parent()
+inline val TabListEntry.parent: TabList
+  get() = parent()
 
-val TabListEntry.gameProfile: GameProfile
-  inline get() = gameProfile()
+inline val TabListEntry.gameProfile: GameProfile
+  get() = gameProfile()
 
-var TabListEntry.displayName: Component?
-  inline get() = displayName()
-  inline set(value) {
+inline var TabListEntry.displayName: Component?
+  get() = displayName()
+  set(value) {
     setDisplayName(value)
   }
 
-var TabListEntry.ping: Int
-  inline get() = ping()
-  inline set(value) {
+inline var TabListEntry.ping: Int
+  get() = ping()
+  set(value) {
     setPing(value)
   }
 
-var TabListEntry.gameMode: Int
-  inline get() = gameMode()
-  inline set(value) {
+inline var TabListEntry.gameMode: Int
+  get() = gameMode()
+  set(value) {
     setGameMode(value)
   }
 

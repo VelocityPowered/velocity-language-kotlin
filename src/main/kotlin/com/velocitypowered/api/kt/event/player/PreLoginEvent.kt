@@ -3,14 +3,14 @@ package com.velocitypowered.api.kt.event.player
 import com.velocitypowered.api.event.player.PreLoginEvent
 import com.velocitypowered.api.proxy.connection.InboundConnection
 
-val PreLoginEvent.connection: InboundConnection
-  inline get() = connection()
+inline val PreLoginEvent.connection: InboundConnection
+  get() = connection()
 
-val PreLoginEvent.username: String
-  inline get() = username()
+inline val PreLoginEvent.username: String
+  get() = username()
 
-var PreLoginEvent.onlineMode: Boolean
-  inline get() = onlineMode()
-  inline set(value) {
+inline var PreLoginEvent.onlineMode: Boolean
+  get() = onlineMode()
+  set(value) {
     setOnlineMode(value)
   }

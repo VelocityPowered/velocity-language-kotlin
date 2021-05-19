@@ -4,8 +4,8 @@ import com.velocitypowered.api.proxy.connection.Player
 import com.velocitypowered.api.proxy.server.RegisteredServer
 import com.velocitypowered.api.proxy.server.ServerInfo
 
-val RegisteredServer.serverInfo: ServerInfo
-  inline get() = serverInfo()
+inline val RegisteredServer.serverInfo: ServerInfo
+  get() = serverInfo()
 
-val RegisteredServer.connectedPlayers: Collection<Player>
-  inline get() = connectedPlayers()
+inline val RegisteredServer.connectedPlayers: Collection<Player>
+  get() = connectedPlayers()

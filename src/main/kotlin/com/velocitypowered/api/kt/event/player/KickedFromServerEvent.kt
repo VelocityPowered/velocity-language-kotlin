@@ -5,23 +5,23 @@ import com.velocitypowered.api.proxy.connection.Player
 import com.velocitypowered.api.proxy.server.RegisteredServer
 import net.kyori.adventure.text.Component
 
-val KickedFromServerEvent.player: Player
-  inline get() = player()
+inline val KickedFromServerEvent.player: Player
+  get() = player()
 
-val KickedFromServerEvent.server: RegisteredServer
-  inline get() = server()
+inline val KickedFromServerEvent.server: RegisteredServer
+  get() = server()
 
-val KickedFromServerEvent.serverKickReason: Component?
-  inline get() = serverKickReason()
+inline val KickedFromServerEvent.serverKickReason: Component?
+  get() = serverKickReason()
 
-val KickedFromServerEvent.isKickedDuringServerConnect: Boolean
-  inline get() = kickedDuringServerConnect()
+inline val KickedFromServerEvent.isKickedDuringServerConnect: Boolean
+  get() = kickedDuringServerConnect()
 
-val KickedFromServerEvent.DisconnectPlayer.message: Component
-  inline get() = message()
+inline val KickedFromServerEvent.DisconnectPlayer.message: Component
+  get() = message()
 
-val KickedFromServerEvent.RedirectPlayer.message: Component?
-  inline get() = message()
+inline val KickedFromServerEvent.RedirectPlayer.message: Component?
+  get() = message()
 
-val KickedFromServerEvent.Notify.message: Component
-  inline get() = message()
+inline val KickedFromServerEvent.Notify.message: Component
+  get() = message()

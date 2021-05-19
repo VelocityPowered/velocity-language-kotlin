@@ -5,11 +5,11 @@ import com.velocitypowered.api.proxy.connection.ServerConnection
 import com.velocitypowered.api.proxy.server.RegisteredServer
 import com.velocitypowered.api.proxy.server.ServerInfo
 
-val ServerConnection.target: RegisteredServer
-  inline get() = target()
+inline val ServerConnection.target: RegisteredServer
+  get() = target()
 
-val ServerConnection.serverInfo: ServerInfo
-  inline get() = serverInfo()
+inline val ServerConnection.serverInfo: ServerInfo
+  get() = serverInfo()
 
-val ServerConnection.player: Player
-  inline get() = player()
+inline val ServerConnection.player: Player
+  get() = player()

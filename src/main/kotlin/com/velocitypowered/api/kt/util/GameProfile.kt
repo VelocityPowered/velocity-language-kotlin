@@ -3,14 +3,14 @@ package com.velocitypowered.api.kt.util
 import com.velocitypowered.api.util.GameProfile
 import java.util.UUID
 
-val GameProfile.uniqueId: UUID
-  inline get() = uuid()
+inline val GameProfile.uniqueId: UUID
+  get() = uuid()
 
-val GameProfile.name: String
-  inline get() = name()
+inline val GameProfile.name: String
+  get() = name()
 
-val GameProfile.properties: Collection<GameProfile.Property>
-  inline get() = properties()
+inline val GameProfile.properties: Collection<GameProfile.Property>
+  get() = properties()
 
 operator fun GameProfile.plus(properties: Iterable<GameProfile.Property>): GameProfile =
   addProperties(properties)
@@ -22,14 +22,14 @@ operator fun GameProfile.component1(): UUID = uniqueId
 operator fun GameProfile.component2(): String = name
 operator fun GameProfile.component3(): Collection<GameProfile.Property> = properties
 
-val GameProfile.Property.name: String
-  inline get() = name()
+inline val GameProfile.Property.name: String
+  get() = name()
 
-val GameProfile.Property.value: String
-  inline get() = value()
+inline val GameProfile.Property.value: String
+  get() = value()
 
-val GameProfile.Property.signature: String?
-  inline get() = signature()
+inline val GameProfile.Property.signature: String?
+  get() = signature()
 
 operator fun GameProfile.Property.component1(): String = name
 operator fun GameProfile.Property.component2(): String = value

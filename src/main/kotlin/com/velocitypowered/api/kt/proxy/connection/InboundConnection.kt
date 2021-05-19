@@ -5,11 +5,11 @@ import com.velocitypowered.api.proxy.connection.InboundConnection
 import java.net.InetSocketAddress
 import java.net.SocketAddress
 
-val InboundConnection.remoteAddress: SocketAddress?
-  inline get() = remoteAddress()
+inline val InboundConnection.remoteAddress: SocketAddress?
+  get() = remoteAddress()
 
-val InboundConnection.connectedHostname: InetSocketAddress?
-  inline get() = connectedHostname()
+inline val InboundConnection.connectedHostname: InetSocketAddress?
+  get() = connectedHostname()
 
-val InboundConnection.protocolVersion: ProtocolVersion
-  inline get() = protocolVersion()
+inline val InboundConnection.protocolVersion: ProtocolVersion
+  get() = protocolVersion()

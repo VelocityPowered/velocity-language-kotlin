@@ -4,8 +4,8 @@ import com.velocitypowered.api.event.player.ServerPostConnectEvent
 import com.velocitypowered.api.proxy.connection.Player
 import com.velocitypowered.api.proxy.server.RegisteredServer
 
-val ServerPostConnectEvent.player: Player
-  inline get() = player()
+inline val ServerPostConnectEvent.player: Player
+  get() = player()
 
-val ServerPostConnectEvent.previousServer: RegisteredServer?
-  inline get() = previousServer()
+inline val ServerPostConnectEvent.previousServer: RegisteredServer?
+  get() = previousServer()

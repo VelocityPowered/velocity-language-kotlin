@@ -4,21 +4,21 @@ import com.velocitypowered.api.event.connection.ConnectionHandshakeEvent
 import com.velocitypowered.api.proxy.connection.InboundConnection
 import java.net.SocketAddress
 
-val ConnectionHandshakeEvent.connection: InboundConnection
-  inline get() = connection()
+inline val ConnectionHandshakeEvent.connection: InboundConnection
+  get() = connection()
 
-var ConnectionHandshakeEvent.currentHostname: String
-  inline get() = currentHostname()
-  inline set(value) {
+inline var ConnectionHandshakeEvent.currentHostname: String
+  get() = currentHostname()
+  set(value) {
     setCurrentHostname(value)
   }
 
-val ConnectionHandshakeEvent.originalHostname: String
-  inline get() = originalHostname()
+inline val ConnectionHandshakeEvent.originalHostname: String
+  get() = originalHostname()
 
-var ConnectionHandshakeEvent.currentRemoteHostAddress: SocketAddress?
-  inline get() = currentRemoteHostAddress()
-  inline set(value) {
+inline var ConnectionHandshakeEvent.currentRemoteHostAddress: SocketAddress?
+  get() = currentRemoteHostAddress()
+  set(value) {
     setCurrentRemoteHostAddress(value)
   }
 

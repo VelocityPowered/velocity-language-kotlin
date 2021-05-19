@@ -4,17 +4,17 @@ import com.velocitypowered.api.event.player.GameProfileRequestEvent
 import com.velocitypowered.api.proxy.connection.InboundConnection
 import com.velocitypowered.api.util.GameProfile
 
-val GameProfileRequestEvent.connection: InboundConnection
-  inline get() = connection()
+inline val GameProfileRequestEvent.connection: InboundConnection
+  get() = connection()
 
-val GameProfileRequestEvent.username: String
-  inline get() = username()
+inline val GameProfileRequestEvent.username: String
+  get() = username()
 
-val GameProfileRequestEvent.initialProfile: GameProfile
-  inline get() = initialProfile()
+inline val GameProfileRequestEvent.initialProfile: GameProfile
+  get() = initialProfile()
 
-var GameProfileRequestEvent.gameProfile: GameProfile
-  inline get() = gameProfile()
-  inline set(value) {
+inline var GameProfileRequestEvent.gameProfile: GameProfile
+  get() = gameProfile()
+  set(value) {
     setGameProfile(value)
   }

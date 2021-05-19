@@ -4,8 +4,8 @@ import com.velocitypowered.api.event.lifecycle.network.ListenerBoundEvent
 import com.velocitypowered.api.network.ListenerType
 import java.net.SocketAddress
 
-val ListenerBoundEvent.address: SocketAddress
-  inline get() = address()
+inline val ListenerBoundEvent.address: SocketAddress
+  get() = address()
 
-val ListenerBoundEvent.type: ListenerType
-  inline get() = type()
+inline val ListenerBoundEvent.type: ListenerType
+  get() = type()

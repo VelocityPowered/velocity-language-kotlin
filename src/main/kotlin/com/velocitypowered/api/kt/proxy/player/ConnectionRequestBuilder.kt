@@ -4,14 +4,14 @@ import com.velocitypowered.api.proxy.player.ConnectionRequestBuilder
 import com.velocitypowered.api.proxy.server.RegisteredServer
 import net.kyori.adventure.text.Component
 
-val ConnectionRequestBuilder.target: RegisteredServer
-  inline get() = target()
+inline val ConnectionRequestBuilder.target: RegisteredServer
+  get() = target()
 
-val ConnectionRequestBuilder.Result.status: ConnectionRequestBuilder.Status
-  inline get() = status()
+inline val ConnectionRequestBuilder.Result.status: ConnectionRequestBuilder.Status
+  get() = status()
 
-val ConnectionRequestBuilder.Result.failureReason: Component?
-  inline get() = failureReason()
+inline val ConnectionRequestBuilder.Result.failureReason: Component?
+  get() = failureReason()
 
-val ConnectionRequestBuilder.Result.finalTarget: RegisteredServer
-  inline get() = finalTarget()
+inline val ConnectionRequestBuilder.Result.finalTarget: RegisteredServer
+  get() = finalTarget()
