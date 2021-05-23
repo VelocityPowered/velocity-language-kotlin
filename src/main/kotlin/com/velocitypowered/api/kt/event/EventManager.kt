@@ -4,8 +4,8 @@ import com.velocitypowered.api.event.Event
 import com.velocitypowered.api.event.EventManager
 import com.velocitypowered.api.event.EventTask
 import com.velocitypowered.api.event.PostOrder
+import com.velocitypowered.api.event.Continuation as EventContinuation
 import kotlin.coroutines.Continuation
-import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
 import kotlin.coroutines.startCoroutine
 
@@ -18,7 +18,7 @@ inline fun <reified E : Event> EventManager.on(
   plugin: Any, order: Short = PostOrder.NORMAL, crossinline handler: suspend (E) -> Unit
 ) =
   register(plugin, E::class.java, order) { event ->
-    suspended {
+    suspendingEventTask {
       handler(event)
     }
   }
@@ -27,20 +27,17 @@ inline fun <reified E : Event> EventManager.on(
  * Marks the specified function as a suspended function, which uses the event continuation system in
  * Velocity to allow you to process the event in a non-blocking way.
  */
-fun suspended(fn: suspend () -> Unit): EventTask {
-  return EventTask.withContinuation { continuation ->
-    val completion = object : Continuation<Unit> {
-      override val context: CoroutineContext
-        get() = EmptyCoroutineContext
-
-      override fun resumeWith(result: Result<Unit>) {
-        if (result.isFailure) {
-          continuation.resumeWithException(result.exceptionOrNull())
-        } else {
-          continuation.resume()
-        }
-      }
-    }
-    fn.startCoroutine(completion)
+@PublishedApi
+internal fun suspendingEventTask(handler: suspend () -> Unit): EventTask =
+  EventTask.withContinuation { continuation ->
+    handler.startCoroutine(continuation.asCoroutineContinuation())
   }
-}
+
+internal fun EventContinuation.asCoroutineContinuation(): Continuation<Unit> =
+  Continuation(EmptyCoroutineContext) { result ->
+    if (result.isFailure) {
+      resumeWithException(result.exceptionOrNull())
+    } else {
+      resume()
+    }
+  }

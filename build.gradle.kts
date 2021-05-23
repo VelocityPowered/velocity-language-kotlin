@@ -11,6 +11,7 @@ group = "com.velocitypowered"
 version = "$kotlinVersion-SNAPSHOT"
 
 repositories {
+  mavenLocal()
   mavenCentral()
 
   maven("https://repo.velocitypowered.com/snapshots/")
@@ -19,9 +20,11 @@ repositories {
 dependencies {
   val velocityVersion: String by project
 
+  implementation(kotlin("reflect"))
   implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinVersion")
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:$kotlinVersion")
+  implementation("net.kyori:adventure-extra-kotlin:4.7.0")
 
   compileOnly("com.velocitypowered:velocity-api:$velocityVersion")
   kapt("com.velocitypowered:velocity-annotation-processor:$velocityVersion")
