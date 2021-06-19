@@ -26,7 +26,7 @@ dependencies {
   implementation("net.kyori:adventure-extra-kotlin:4.7.0")
 
   compileOnly("com.velocitypowered:velocity-api:$velocityVersion")
-  kapt("com.velocitypowered:velocity-annotation-processor:$velocityVersion")
+  kapt("com.velocitypowered:velocity-api:$velocityVersion")
 }
 
 tasks.build {
