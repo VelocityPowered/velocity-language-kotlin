@@ -6,9 +6,10 @@ plugins {
 }
 
 val kotlinVersion: String by project
+val velocityVersion: String by project
 
 group = "com.velocitypowered"
-version = "$kotlinVersion-SNAPSHOT"
+version = "$velocityVersion+$kotlinVersion"
 
 repositories {
   mavenLocal()
@@ -18,8 +19,6 @@ repositories {
 }
 
 dependencies {
-  val velocityVersion: String by project
-
   implementation(kotlin("reflect"))
   implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinVersion")
