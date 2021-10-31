@@ -23,7 +23,7 @@ dependencies {
   implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinVersion")
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:$kotlinVersion")
-  implementation("net.kyori:adventure-extra-kotlin:4.7.0")
+  implementation("net.kyori:adventure-extra-kotlin:4.9.3")
 
   compileOnly("com.velocitypowered:velocity-api:$velocityVersion")
   kapt("com.velocitypowered:velocity-api:$velocityVersion")
