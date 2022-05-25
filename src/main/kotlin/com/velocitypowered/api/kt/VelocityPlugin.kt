@@ -9,11 +9,11 @@ import com.velocitypowered.api.kt.event.registerCoroutineContinuationAdapter
 import com.velocitypowered.api.plugin.Plugin
 import org.slf4j.Logger
 
-@Plugin(id = "velocity-language-kotlin", authors = ["Velocity Contributors"])
+@Plugin(id = "velocity-language-kotlin", authors = ["Velocity Contributors"], version = BuildConstants.VERSION)
 @Suppress("unused")
 class VelocityPlugin @Inject constructor(
   val logger: Logger,
-  val eventManager: EventManager,
+  eventManager: EventManager,
 ) {
 
   init {
